@@ -60,7 +60,7 @@ public abstract class BotService implements IProcessAgent {
 		httpRequest.setParameters(postParameters);
 
 		IHTTPResponse httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-				Constant.OPEN_WEATHER_MAP_REST_EXECUTE);
+				Constant.OPENWEATHERMAP_SAMPLE_REST_EXECUTE);
 		return httpResponse;
 	}
 

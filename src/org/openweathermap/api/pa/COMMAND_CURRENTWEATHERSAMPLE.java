@@ -1,18 +1,19 @@
 //	Generated using Unvired Modeller - Build R-4.000.0002
 package org.openweathermap.api.pa;  
 
-import org.openweathermap.api.gen.pa.ABSTRACT_COMMAND_CURRENTWEATHER;
+import org.openweathermap.api.gen.pa.ABSTRACT_COMMAND_CURRENTWEATHERSAMPLE;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.unvired.chyme.api.Message;
 import com.unvired.ump.agent.IHTTPResponse;
  
-public class COMMAND_CURRENTWEATHER extends ABSTRACT_COMMAND_CURRENTWEATHER {
+public class COMMAND_CURRENTWEATHERSAMPLE extends ABSTRACT_COMMAND_CURRENTWEATHERSAMPLE {
 	
     public void execute() {
     	
         try {        	
-            String city = inputBE_CurrentWeather.getCurrentWeather_HEADER().getCITY();    
+            String city = inputBE_CurrentWeatherSample.getCurrentWeatherSample_HEADER().getCITY();    
             
             String responseText = "";
             
@@ -22,7 +23,7 @@ public class COMMAND_CURRENTWEATHER extends ABSTRACT_COMMAND_CURRENTWEATHER {
                 JsonObject weatherJson = (JsonObject)new JsonParser().parse(response.getMessage());            
                 String description = weatherJson.get("weather").getAsJsonArray().get(0).getAsJsonObject().get("description").getAsString();
                 int temperature = weatherJson.get("main").getAsJsonObject().get("temp").getAsBigDecimal().intValue() - 273;            
-                responseText = city + " Weather : " + description + ". Current temperature is " + temperature + " degree Celsius.";
+                responseText = city + " weather : " + description + ". Current temperature is " + temperature + " degree Celsius.";
             }
             else
                 responseText = "Something went wrong. Please try again";              
