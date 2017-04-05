@@ -1,4 +1,4 @@
-//	Generated using Unvired Modeller - Build R-4.000.0002
+//	Generated using Unvired Modeller - Build R-4.000.0042
 package org.openweathermap.api.gen.be;
 
 import java.util.ArrayList;
@@ -26,12 +26,12 @@ public class BE_CurrentWeatherSample extends BusinessEntity {
 		private static final long serialVersionUID = 1L;
 		public static final String NAME = "CurrentWeatherSample_HEADER";
 
-		public static final String FLD_CITY = "CITY";
+		public static final String FLD_city = "city";
 
 		public static final ArrayList<String> FIELDS = new ArrayList<String>();
 
 		static {
-			FIELDS.add(FLD_CITY);
+			FIELDS.add(FLD_city);
 		}
 
 		public CurrentWeatherSample_HEADER()
@@ -39,15 +39,15 @@ public class BE_CurrentWeatherSample extends BusinessEntity {
 			setName(NAME);
 		}
 
-		public String getCITY()
+		public String getcity()
 		{
-			return getField(FLD_CITY);
+			return getField(FLD_city);
 		}
 
-		public void setCITY(String value)
+		public void setcity(String value)
 		{
 			if(value != null)
-				addField(FLD_CITY, value);
+				addField(FLD_city, value);
 		}
 
 	}

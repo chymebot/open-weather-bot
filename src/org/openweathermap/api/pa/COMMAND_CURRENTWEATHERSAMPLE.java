@@ -13,7 +13,7 @@ public class COMMAND_CURRENTWEATHERSAMPLE extends ABSTRACT_COMMAND_CURRENTWEATHE
     public void execute() {
     	
         try {        	
-            String city = inputBE_CurrentWeatherSample.getCurrentWeatherSample_HEADER().getCITY();    
+            String city = inputBE_CurrentWeatherSample.getCurrentWeatherSample_HEADER().getcity();    
             
             String responseText = "";
             
@@ -23,7 +23,7 @@ public class COMMAND_CURRENTWEATHERSAMPLE extends ABSTRACT_COMMAND_CURRENTWEATHE
                 JsonObject weatherJson = (JsonObject)new JsonParser().parse(response.getMessage());            
                 String description = weatherJson.get("weather").getAsJsonArray().get(0).getAsJsonObject().get("description").getAsString();
                 int temperature = weatherJson.get("main").getAsJsonObject().get("temp").getAsBigDecimal().intValue() - 273;            
-                responseText = city + " weather : " + description + ". Current temperature is " + temperature + " degree Celsius.";
+                responseText = " City : " + city + " Weather : " + description + ". Current temperature is " + temperature + " degree Celsius.";
             }
             else
                 responseText = "Something went wrong. Please try again";              
